@@ -1,4 +1,4 @@
-import { defineConfig } from 'astro/config';
+import { defineConfig, passthroughImageService } from "astro/config";
 import cloudflare from "@astrojs/cloudflare";
 
 // https://astro.build/config
@@ -6,10 +6,17 @@ export default defineConfig({
   vite: {
     resolve: {
       alias: {
-        'src/*': './src/*'
-      }
-    }
+        "src/*": "./src/*",
+      },
+    },
   },
   output: "server",
-  adapter: cloudflare()
+  adapter: cloudflare({
+    mode: 'directory'
+  }),
+  image: {
+    service: {
+      entrypoint: 'astro/assets/services/noop'
+    }
+  },
 });

@@ -11,9 +11,6 @@ dependencies:
   '@astrojs/cloudflare':
     specifier: ^7.6.4
     version: 7.6.4(astro@3.4.3)
-  '@astropub/md':
-    specifier: ^0.3.0
-    version: 0.3.0(@astrojs/markdown-remark@3.3.0)
   '@stdlib/random-base-triangular':
     specifier: ^0.1.0
     version: 0.1.0
@@ -26,6 +23,9 @@ dependencies:
   lodash:
     specifier: ^4.17.21
     version: 4.17.21
+  marked:
+    specifier: ^9.1.5
+    version: 9.1.5
   typescript:
     specifier: ^5.2.2
     version: 5.2.2
@@ -183,14 +183,6 @@ packages:
 
   /@astrojs/underscore-redirects@0.3.3:
     resolution: {integrity: sha512-qDAKhFO4M1KzP7mxoJfiehf8oyf3EB158MxAa6z10NeD2pR3o4K3LlOQI8CfJgXE+BDBQcnaLvVCg/Mz/Gkg4Q==}
-    dev: false
-
-  /@astropub/md@0.3.0(@astrojs/markdown-remark@3.3.0):
-    resolution: {integrity: sha512-cR4gT97/aI9GH26Hg4g5tZZl5MFeEH26RO54irjiTK7FEmILbGViHAXI+q+7VCghi1bEGsy5SpY3u1hRoAFNfQ==}
-    peerDependencies:
-      '@astrojs/markdown-remark': ^3
-    dependencies:
-      '@astrojs/markdown-remark': 3.3.0(astro@3.4.3)
     dev: false
 
   /@babel/code-frame@7.22.13:
@@ -7813,6 +7805,12 @@ packages:
 
   /markdown-table@3.0.3:
     resolution: {integrity: sha512-Z1NL3Tb1M9wH4XESsCDEksWoKTdlUafKc4pt0GRwjUyXaCFZ+dc3g2erqB6zm3szA2IUSi7VnPI+o/9jnxh9hw==}
+    dev: false
+
+  /marked@9.1.5:
+    resolution: {integrity: sha512-14QG3shv8Kg/xc0Yh6TNkMj90wXH9mmldi5941I2OevfJ/FQAFLEwtwU2/FfgSAOMlWHrEukWSGQf8MiVYNG2A==}
+    engines: {node: '>= 16'}
+    hasBin: true
     dev: false
 
   /mdast-util-definitions@5.1.2:

@@ -1,35 +1,40 @@
 ---
-import Layout from 'src/layouts/page.astro';
-import {markdown} from '@astropub/md';
+import Layout from "src/layouts/page.astro";
+import { marked } from "marked";
 
-const {category, generator} = Astro.params;
+const { category, generator } = Astro.params;
 
-const {searchParams} = Astro.url;
+const { searchParams } = Astro.url;
 
-const res = await fetch(Astro.url.origin + `/generate/${category}/${generator}.json?n=${searchParams.get('n') ?? 1}`).then(x => x.json())
-
+const res = await fetch(
+  Astro.url.origin +
+    `/generate/${category}/${generator}.json?n=${searchParams.get("n") ?? 1}`
+).then((x) => x.json());
 ---
 
-<Layout title={'Generate '+res.generator}>
-    
-    <hgroup>
-        <h1>{res.generator}</h1>
-        <nav aria-label="breadcrumbs">
-            <ol>
-                <li><a href="/generate">generate</a></li>
-                <li><a href={`/generate/${category}`}>{category}</a></li>
-                <li><a href={`/generate/${category}/${generator}`}>{generator}</a></li>
-            </ol>
-        </nav>
-    </hgroup>
-    <dl>
-    {res.results.map( (result: {[key: string]: string}) => 
-        Object.entries(result).map( 
-            ([key, value]) => <>
-                <dt>{key}</dt>
-                <dd>{markdown(value)}</dd>
-            </>
-        )
-    )}
-    </dl>
+<Layout title={"Generate " + res.generator}>
+  <hgroup>
+    <h1>{res.generator}</h1>
+    <nav aria-label="breadcrumbs">
+      <ol>
+        <li><a href="/generate">generate</a></li>
+        <li><a href={`/generate/${category}`}>{category}</a></li>
+        <li><a href={`/generate/${category}/${generator}`}>{generator}</a></li>
+      </ol>
+    </nav>
+  </hgroup>
+  <dl>
+    {
+      res.results.map((result: { [key: string]: string }) =>
+        Object.entries(result).map(([key, value]) => (
+          <>
+            <dt>{key}</dt>
+            <dd>
+              <Fragment set:html={marked(value)} />
+            </dd>
+          </>
+        ))
+      )
+    }
+  </dl>
 </Layout>
