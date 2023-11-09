@@ -1,0 +1,6 @@
+name: Corporations
+tables:
+  Name: corporation_names
+  Sector: corporation_sectors
+  Feature: corporation_features
+  Scheme: corporation_schemes

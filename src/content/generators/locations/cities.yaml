@@ -1,0 +1,6 @@
+name: Cities
+tables:
+  Name: city_names
+  CYCLOPS Surveillance Level: city_surveillance_levels
+  Feature: city_features
+  Headline: city_headlines

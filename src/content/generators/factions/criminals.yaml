@@ -1,0 +1,6 @@
+name: Criminals
+tables:
+  Name: criminal_names
+  Honor: criminal_honors
+  Feature: criminal_features
+  Racket: criminal_rackets

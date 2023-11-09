@@ -1,0 +1,6 @@
+name: Battlefields
+tables:
+  Description: battlefield_descriptions
+  Layout: battlefield_layouts
+  Feature: battlefield_features
+  Grave: battlefield_graves

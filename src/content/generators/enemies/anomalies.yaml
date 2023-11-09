@@ -1,0 +1,6 @@
+name: Anomalies
+tables:
+  Description: anomaly_descriptions
+  Signature: anomaly_signatures
+  Feature: anomaly_features
+  Sighting: anomaly_sightings

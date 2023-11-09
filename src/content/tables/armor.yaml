@@ -1,0 +1,13 @@
+distribution: normal
+items:
+  - Combat shield | 0 ARMOR (accessory)
+  - Riot shield | 1 ARMOR (equip as weapon)
+  - Heavy riot shield | 2 ARMOR (equip as weapon)
+  - Helmet | 1 ARMOR (accessory)
+  - Civilian clothing | 0 ARMOR
+  - Standard fatigues | 0 ARMOR
+  - Tactical clothing | 1 ARMOR
+  - Bulletproof vest | 1 ARMOR
+  - Exoskeleton frame | 1 ARMOR
+  - Ceramic plate | 2 ARMOR
+  - Power armor | 2 ARMOR

@@ -1,0 +1,6 @@
+name: Soldier
+tables:
+  Name: soldier_names
+  Rank: soldier_ranks
+  Feature: soldier_features
+  Anecdote: soldier_anecdotes

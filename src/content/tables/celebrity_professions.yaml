@@ -1,0 +1,13 @@
+distribution: normal
+items:
+  - Royalty
+  - "[Politician](/generate/characters/politicians)"
+  - Millionaire
+  - Activist
+  - Athlete
+  - Actor
+  - Musician
+  - Artist
+  - Designer
+  - "[Scientist](/generate/characters/scientists)"
+  - Roll twice, ignoring duplicates

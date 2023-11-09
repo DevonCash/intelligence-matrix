@@ -1,0 +1,6 @@
+name: Animals
+tables:
+  Description: animal_descriptions
+  Amount: animal_amounts
+  Feature: animal_features
+  Malady: animal_maladies

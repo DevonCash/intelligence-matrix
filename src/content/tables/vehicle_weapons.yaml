@@ -1,0 +1,13 @@
+distribution: normal
+items:
+  - Auto-targeting prototype cannon | 2D6 DAMAGE
+  - Side hazards (e.g. spikes, laser jets) | 3 DAMAGE
+  - Homing missiles | 1D6+2 DAMAGE, 1D6 missiles
+  - Mounted gun | 1D6+1 DAMAGE
+  - Gunner seats | 0 DAMAGE, 1D6 seats
+  - Front-mounted ram | No crash self-damage
+  - Mounted heavy weapon | 1D6+2 DAMAGE
+  - Integrated weapons | 1D6 DAMAGE, 1D6 weapons
+  - Mounted grenade launcher | 1D6 DAMAGE
+  - Mine dropper | 2D6 DAMAGE, 1D6 mines
+  - Chemical weapon system | 2D6 DAMAGE to area

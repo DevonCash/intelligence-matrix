@@ -1,0 +1,7 @@
+name: Politician
+tables:
+  Name: politician_names
+  Position: politician_positions
+  Vice: politician_vices
+  Feature: politician_features
+  Secret: politician_secrets

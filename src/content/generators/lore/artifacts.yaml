@@ -1,0 +1,6 @@
+name: Artifacts
+tables:
+  Description: artifact_descriptions
+  Interest: artifact_interests
+  Feature: artifact_features
+  Rumor: artifact_rumors

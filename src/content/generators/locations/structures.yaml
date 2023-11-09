@@ -1,0 +1,7 @@
+name: Structures
+tables:
+  Description: structure_descriptions
+  Owner: structure_owners
+  Security: structure_securities
+  Feature: structure_features
+  History: structure_histories

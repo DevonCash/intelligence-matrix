@@ -1,0 +1,13 @@
+distribution: normal
+items:
+  - Single/group of 1D6 [aliens](/generate/factions/aliens)
+  - Single/group of 1D6 [monsters](/generate/enemies/monsters)/[experiments](/generate/enemies/experiments)
+  - Faction representative
+  - Single/group of [animals](/generate/enemies/animals)
+  - A random pre-made NPC
+  - 1D6 [soldiers](/generate/characters/soldiers) and/or a [squad](/generate/enemies/squads)
+  - 1D6 random NPCs
+  - New location becomes available
+  - Weather change
+  - Single/group of 1D6 [robots](/generate/enemies/robots)
+  - "[Anomaly](/generate/enemies/anomalies) appears"

@@ -1,0 +1,13 @@
+distribution: normal
+items:
+  - "[Base Upgrade](/generate/gear/base_upgrade) (1-in-1D6: Two base upgrades)"
+  - "[Structure](/generate/locations/structures) (1-in-1D6: Lot of 1d6 structures)"
+  - "[Enemy](/generate/enemies) ally"
+  - "Lot of 1D6 [crates](/generate/gear/crate_contents)"
+  - "Lot of 1D6 [weapons](/generate/gear/weapons)"
+  - "[Weapon](/generate/gear/weapons) with [tag](/generate/gear/weapon_tag) and [skin](/generate/gear/weapon_skin) (1-in-1D6: 1D6 tags)"
+  - Lot of 1D6 [armors](/generate/gear/armor)
+  - 1D6 [CYCLOPS gadgets](/generate/gear/cyclops_gadget)
+  - NPC ally
+  - "[Vehicle](/generate/gear/vehicles) (1-in-1D6: Lot of 1D6 vehicles)"
+  - Paycheck (complete mission and choose reward)

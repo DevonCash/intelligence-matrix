@@ -1,0 +1,7 @@
+name: Spy
+tables:
+  Name: spy_names
+  Codename: spy_codenames
+  Clearance: spy_clearances
+  Feature: spy_features
+  Modus: spy_modi

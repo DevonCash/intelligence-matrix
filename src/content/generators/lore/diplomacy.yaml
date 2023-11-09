@@ -1,0 +1,6 @@
+name: Diplomacy
+tables:
+  Description: diplomacy_descriptions
+  Coverage: diplomacy_coverages
+  Feature: diplomacy_features
+  Drama: diplomacy_dramas

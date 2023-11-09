@@ -1,0 +1,7 @@
+name: Mission
+tables:
+  The Dossier Says...: mission_opponents
+  Is Trying To...: mission_plots
+  Which Will...: mission_consequences
+  But...: mission_complications
+  Reward: mission_rewards

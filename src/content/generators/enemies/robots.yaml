@@ -1,0 +1,6 @@
+name: Robots
+tables:
+  Description: robot_descriptions
+  Budget: robot_budgets
+  Feature: robot_features
+  Programming: robot_programming

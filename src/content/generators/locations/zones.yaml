@@ -1,0 +1,7 @@
+name: Zones
+tables:
+  Description: zone_descriptions
+  Size: zone_sizes
+  Integrity: zone_integrities
+  Feature: zone_features
+  Center: zone_centers

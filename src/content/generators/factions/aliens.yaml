@@ -1,0 +1,7 @@
+name: Aliens
+tables:
+  Description: alien_descriptions
+  Origin: alien_origins
+  Mission: alien_missions
+  Feature: alien_features
+  Truth: alien_truths

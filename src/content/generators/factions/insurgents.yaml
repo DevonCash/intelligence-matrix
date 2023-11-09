@@ -1,0 +1,6 @@
+name: Insurgents
+tables:
+  Description: insurgency_descriptions
+  Foothold: insurgency_footholds
+  Feature: insurgency_features
+  Strategy: insurgency_strategies

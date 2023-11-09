@@ -1,0 +1,142 @@
+---
+import { getCollection } from 'astro:content';
+import {groupBy} from 'lodash';
+
+const { title } = Astro.props;
+const generators = await getCollection('generators');
+const categories = groupBy(generators, ({id})=> id.split('/')[0]);
+---
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width" />
+        <meta name="generator" content={Astro.generator} />
+        <title>{title ?? "intelligence matrix"}</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap"
+            rel="stylesheet"
+        />
+        <style is:global>
+            * {
+                box-sizing: border-box;
+            }
+
+            dt {
+                padding: .2em .5em;
+                background: black;
+                color: white;
+            }
+
+            [aria-label="breadcrumbs"] ol {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                display: flex;
+            }
+
+            [aria-label="breadcrumbs"] li:not(:last-child)::after {
+                content: '>';
+                margin: 0 .2em;
+            }
+
+            body[data-theme="typewriter"] {
+                font-family: "Special Elite", cursive;
+                font-size: 12px;
+            }
+
+            body[data-theme="console"] {
+                font-family: monospace;
+            }
+
+            body > footer {
+                position: fixed;
+                bottom: 0;
+                padding: 0.5rem;
+                width: calc(100% - 1.5rem);
+                display: flex;
+                justify-content: flex-end;
+            }
+
+            body {
+                position: relative;
+                display: grid;
+                grid-template-areas: "sidenav main";
+                grid-template-columns: 1fr 3fr;
+                margin: 0;
+                gap: 1rem;
+                height: 100vh;
+            }
+
+            aside {
+                height: 100%;
+                grid-area: sidenav;
+                padding: 1rem;
+                background-color: #f0f0f0;
+                overflow-y: scroll;
+            }
+
+            footer {
+                position: absolute;
+                bottom: 0;
+            }
+
+            hgroup > :not(:first-child) {
+                margin-top: 0;
+            }
+            hgroup > :not(:last-child) {
+                margin-bottom: 0;
+            }
+        </style>
+    </head>
+    <body data-theme="typewriter">
+        <footer>
+            <label>
+                Theme
+                <select id="select-theme">
+                    <option selected>typewriter</option>
+                    <option>console</option>
+                </select>
+            </label>
+        </footer>
+        <aside >
+            <nav>
+                {Object.keys(categories).map((category) => (
+                    <details >
+                        <summary><a href={'/generate/'+category}>{category}</a></summary>
+                        <ul>
+                            {categories[category].map(({id, data}) => (
+                                <li><a href={'/generate/'+id}>{data.name}</a></li>
+                            ))}
+                        </ul>
+                    </details>
+                ))}
+            </nav>
+        </aside>
+        <main style="grid-area:main;">
+        <slot />
+        </main>
+        
+        <script>
+            function init() {
+                const saved = localStorage.getItem("theme") ?? "typewriter";
+                if (saved) document.body.dataset.theme = saved;
+
+                const selector = document.querySelector("#select-theme");
+                if (!selector || !(selector instanceof HTMLSelectElement))
+                    return;
+                selector.value = saved;
+                selector?.addEventListener("change", (event) => {
+                    /** @ts-ignore **/
+                    const theme = event.target.value;
+                    document.body.dataset.theme = theme;
+                    localStorage.setItem("theme", theme);
+                });
+            }
+
+            window.addEventListener("load", init);
+        </script>
+    </body>
+</html>

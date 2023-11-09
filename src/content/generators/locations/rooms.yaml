@@ -1,0 +1,7 @@
+name: Rooms
+tables:
+  Description: room_descriptions
+  Exits (1d6 times): room_exits
+  Doors: room_doors
+  Feature: room_features
+  Event: room_events

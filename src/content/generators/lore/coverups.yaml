@@ -1,0 +1,7 @@
+name: Coverups
+tables:
+  Description: coverup_descriptions
+  Suppression: coverup_suppressions
+  Witnesses: coverup_witnesses
+  Feature: coverup_features
+  Hook: coverup_hooks

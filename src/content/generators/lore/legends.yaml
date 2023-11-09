@@ -1,0 +1,6 @@
+name: Legends
+tables:
+  Description: legend_descriptions
+  Ultimate Fate: legend_fates
+  Feature: legend_features
+  Achievement: legend_achievements

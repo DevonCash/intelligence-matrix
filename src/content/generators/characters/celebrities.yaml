@@ -1,0 +1,6 @@
+name: Celebrity
+tables:
+  Name: celebrity_names
+  Profession: celebrity_professions
+  Feature: celebrity_features
+  Story: celebrity_stories

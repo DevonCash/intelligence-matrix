@@ -1,0 +1,7 @@
+name: Cults
+tables:
+  Description: cult_descriptions
+  Leadership: cult_leaderships
+  Size: cult_sizes
+  Feature: cult_features
+  Prophecy: cult_prophecies

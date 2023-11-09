@@ -1,0 +1,7 @@
+name: Squads
+tables:
+  Name: squad_names
+  Reputation: squad_reputations
+  Command: squad_commands
+  Feature: squad_features
+  Theme: squad_themes

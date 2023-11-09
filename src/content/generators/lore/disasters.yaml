@@ -1,0 +1,7 @@
+name: Disasters
+tables:
+  Description: disaster_descriptions
+  Scale: disaster_scales
+  Response: disaster_responses
+  Feature: disaster_features
+  Impact: disaster_impacts

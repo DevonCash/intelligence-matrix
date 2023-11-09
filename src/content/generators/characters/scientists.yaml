@@ -1,0 +1,7 @@
+name: Scientist
+tables:
+  Name: scientist_names
+  Allegiance: scientist_allegiances
+  Career: scientist_careers
+  Feature: scientist_features
+  Discovery: scientist_discoveries

@@ -1,0 +1,6 @@
+name: Monsters
+tables:
+  Description: monster_descriptions
+  Amount: monster_amounts
+  Feature: monster_features
+  Horror: monster_horrors

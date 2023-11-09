@@ -1,0 +1,6 @@
+name: Nature
+tables:
+  Description: nature_descriptions
+  Situation: nature_situations
+  Feature: nature_features
+  Claim: nature_claims

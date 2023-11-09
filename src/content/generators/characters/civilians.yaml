@@ -1,0 +1,6 @@
+name: Civilian
+tables:
+  Name: civilian_names
+  Job: civilian_jobs
+  Feature: civilian_features
+  Hobby: civilian_hobbies

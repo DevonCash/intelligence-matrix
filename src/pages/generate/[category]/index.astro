@@ -1,0 +1,16 @@
+---
+import {getCollection} from 'astro:content';
+const { category } = Astro.params;
+const generators = await getCollection('generators', ( {id} ) => id.startsWith(category));
+console.log(generators);
+---
+
+<nav>
+    <ul>
+        {generators?.map(({id, data}) => (
+        <li>
+            <a href={`/generate/${id}`}>{data.name}</a>
+        </li>
+        ))}
+    </ul>
+</nav>
