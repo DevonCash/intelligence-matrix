@@ -1,7 +1,7 @@
 ---
 import {getCollection} from 'astro:content';
-const { category } = Astro.params;
-const generators = await getCollection('generators', ( {id} ) => id.startsWith(category));
+const { category } = Astro.params as { category: string };
+const generators = await getCollection('generators', ( {id} ) => id!.startsWith(category));
 console.log(generators);
 ---
 

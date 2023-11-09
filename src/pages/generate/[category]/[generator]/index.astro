@@ -23,7 +23,7 @@ const res = await fetch(Astro.url.origin + `/generate/${category}/${generator}.j
         </nav>
     </hgroup>
     <dl>
-    {res.results.map( result => 
+    {res.results.map( (result: {[key: string]: string}) => 
         Object.entries(result).map( 
             ([key, value]) => <>
                 <dt>{key}</dt>

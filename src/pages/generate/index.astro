@@ -1,11 +1,6 @@
 ---
 import Layout from 'src/layouts/page.astro';
-import { getCollection } from 'astro:content';
-import {groupBy} from 'lodash';
 
-const generators = await getCollection('generators');
-
-const categories = groupBy(generators, ({id})=> id.split('/')[0]);
 ---
 <Layout>
     
