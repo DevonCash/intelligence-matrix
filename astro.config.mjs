@@ -12,11 +12,9 @@ export default defineConfig({
   },
   output: "server",
   adapter: cloudflare({
-    mode: 'directory'
+    mode: "directory",
   }),
   image: {
-    service: {
-      entrypoint: 'astro/assets/services/noop'
-    }
+    service: passthroughImageService(),
   },
 });
