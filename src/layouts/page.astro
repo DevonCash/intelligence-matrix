@@ -127,7 +127,7 @@ const categories = groupBy(generators, ({ id }) => id.split("/")[0]);
 
     <script>
       function init() {
-        const saved = localStorage.getItem("theme") ?? "typewriter";
+        const saved = localStorage.getItem("theme") ?? "console";
         if (saved) document.body.dataset.theme = saved;
 
         const selector = document.querySelector("#select-theme");
