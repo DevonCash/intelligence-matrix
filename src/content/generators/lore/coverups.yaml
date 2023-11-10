@@ -1,4 +1,5 @@
-name: Coverups
+singular: Coverups
+plural: Coverups
 tables:
   Description: coverup_descriptions
   Suppression: coverup_suppressions

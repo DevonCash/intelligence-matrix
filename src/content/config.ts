@@ -15,7 +15,8 @@ const tables = defineCollection({
 const generators = defineCollection({
     type: 'data',
     schema: z.object({
-        name: z.string(),
+        singular: z.string(),
+        plural: z.string(),
         tables: z.record(reference('tables'))
     })
 })

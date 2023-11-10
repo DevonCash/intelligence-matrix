@@ -1,4 +1,5 @@
-name: Rooms
+singular: Room
+plural: Rooms
 tables:
   Description: room_descriptions
   Exits (1d6 times): room_exits

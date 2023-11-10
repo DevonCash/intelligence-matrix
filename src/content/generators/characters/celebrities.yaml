@@ -1,4 +1,5 @@
-name: Celebrity
+singular: Celebrity
+plural: Celebrities
 tables:
   Name: celebrity_names
   Profession: celebrity_professions

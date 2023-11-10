@@ -1,4 +1,5 @@
-name: Scientist
+singular: Scientist
+plural: Scientists
 tables:
   Name: scientist_names
   Allegiance: scientist_allegiances

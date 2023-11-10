@@ -5,6 +5,7 @@ import { groupBy } from "lodash";
 const { title } = Astro.props;
 const generators = await getCollection("generators");
 const categories = groupBy(generators, ({ id }) => id.split("/")[0]);
+
 ---
 
 <html lang="en">
@@ -89,6 +90,38 @@ const categories = groupBy(generators, ({ id }) => id.split("/")[0]);
       hgroup > :not(:last-child) {
         margin-bottom: 0;
       }
+
+      table {
+        border: 1px solid currentColor;
+        border-collapse: collapse;
+        position: relative;
+        margin-left: 2em;
+      }
+
+      th, td {
+        border: 1px solid black;
+        padding: .2em;
+      }
+
+      th {
+        background: black;
+        color: white;
+        text-align: right;
+      }
+
+      td > p {
+        margin: 0;
+      }
+
+
+      caption {
+        position: absolute;
+        writing-mode: vertical-rl;
+        text-orientation: mixed;
+        top: 50%;
+        transform: translateY(-50%) rotate(180deg);
+        right: 100%;
+      }
     </style>
   </head>
   <body data-theme="typewriter">
@@ -105,14 +138,14 @@ const categories = groupBy(generators, ({ id }) => id.split("/")[0]);
       <nav>
         {
           Object.keys(categories).map((category) => (
-            <details>
+            <details open={Astro.url.pathname.startsWith("/generate/" + category)}>
               <summary>
                 <a href={"/generate/" + category}>{category}</a>
               </summary>
               <ul>
                 {categories[category].map(({ id, data }) => (
                   <li>
-                    <a href={"/generate/" + id}>{data.name}</a>
+                    <a href={"/generate/" + id}>{data.plural}</a>
                   </li>
                 ))}
               </ul>

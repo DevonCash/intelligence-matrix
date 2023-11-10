@@ -1,4 +1,5 @@
-name: Spy
+singular: Spy
+plural: Spies
 tables:
   Name: spy_names
   Codename: spy_codenames

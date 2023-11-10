@@ -1,4 +1,5 @@
-name: Cities
+singular: City
+plural: Cities
 tables:
   Name: city_names
   CYCLOPS Surveillance Level: city_surveillance_levels

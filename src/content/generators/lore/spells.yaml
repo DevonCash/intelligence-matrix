@@ -1,7 +1,8 @@
-name: Spells
+singular: Spell
+plural: Spells
 tables:
   Name: spell_names
   Spell Level: spell_levels
   Obscurity: spell_obscurities
   Feature (Roll Equal to Spell Level): spell_features
-  Effect (Once, or 1d6 for LEVEL 6): spell_effects 
+  Effect (Once, or 1d6 for LEVEL 6): spell_effects

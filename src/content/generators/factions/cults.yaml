@@ -1,4 +1,5 @@
-name: Cults
+singular: Cult
+plural: Cults
 tables:
   Description: cult_descriptions
   Leadership: cult_leaderships

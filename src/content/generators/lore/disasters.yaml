@@ -1,4 +1,5 @@
-name: Disasters
+singular: Disaster
+plural: Disasters
 tables:
   Description: disaster_descriptions
   Scale: disaster_scales

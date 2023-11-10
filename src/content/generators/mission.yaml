@@ -1,4 +1,5 @@
-name: Mission
+singular: Mission
+plural: Missions
 tables:
   The Dossier Says...: mission_opponents
   Is Trying To...: mission_plots

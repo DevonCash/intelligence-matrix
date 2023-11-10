@@ -1,4 +1,5 @@
-name: Diplomacy
+singular: Diplomacy
+plural: Diplomacies
 tables:
   Description: diplomacy_descriptions
   Coverage: diplomacy_coverages

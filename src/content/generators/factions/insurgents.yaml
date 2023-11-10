@@ -1,4 +1,5 @@
-name: Insurgents
+singular: Insurgency
+plural: Insurgencies
 tables:
   Description: insurgency_descriptions
   Foothold: insurgency_footholds

@@ -1,4 +1,5 @@
-name: Monsters
+singular: Monster
+plural: Monsters
 tables:
   Description: monster_descriptions
   Amount: monster_amounts

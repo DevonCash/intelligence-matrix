@@ -1,4 +1,5 @@
-name: Robots
+singular: Robot
+plural: Robots
 tables:
   Description: robot_descriptions
   Budget: robot_budgets

@@ -1,4 +1,5 @@
-name: Agencies
+singular: Agency
+plural: Agencies
 tables:
   Name: agency_names
   Parent: agency_parents

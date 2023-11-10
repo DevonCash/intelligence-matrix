@@ -1,4 +1,5 @@
-name: Artifacts
+singular: Artifact
+plural: Artifacts
 tables:
   Description: artifact_descriptions
   Interest: artifact_interests

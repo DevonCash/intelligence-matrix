@@ -1,4 +1,5 @@
-name: Civilian
+singular: Civilian
+plural: Civilians
 tables:
   Name: civilian_names
   Job: civilian_jobs

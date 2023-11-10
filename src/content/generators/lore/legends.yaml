@@ -1,4 +1,5 @@
-name: Legends
+singular: Legend
+plural: Legends
 tables:
   Description: legend_descriptions
   Ultimate Fate: legend_fates

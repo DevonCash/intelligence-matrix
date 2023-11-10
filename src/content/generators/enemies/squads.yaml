@@ -1,4 +1,5 @@
-name: Squads
+singular: Squad
+plural: Squads
 tables:
   Name: squad_names
   Reputation: squad_reputations

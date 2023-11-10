@@ -1,4 +1,5 @@
-name: Animals
+singular: Animal
+plural: Animals
 tables:
   Description: animal_descriptions
   Amount: animal_amounts

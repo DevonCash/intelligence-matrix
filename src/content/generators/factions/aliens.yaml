@@ -1,4 +1,5 @@
-name: Aliens
+singular: Alien
+plural: Aliens
 tables:
   Description: alien_descriptions
   Origin: alien_origins

@@ -1,4 +1,5 @@
-name: Soldier
+singular: Soldier
+plural: Soldiers
 tables:
   Name: soldier_names
   Rank: soldier_ranks

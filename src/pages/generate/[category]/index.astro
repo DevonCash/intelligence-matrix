@@ -1,0 +1,23 @@
+---
+import { getCollection } from "astro:content";
+import { sample } from "lodash";
+import GeneratorOutput from "src/components/generator-output.astro";
+import Layout from "src/layouts/page.astro";
+
+const { category } = Astro.params;
+
+const generators = await getCollection("generators", ({ id }) =>
+  id.startsWith(category)
+);
+const { id } = sample(generators);
+
+const { generator, results } = await fetch(
+  Astro.url.origin + "/generate/" + id + '.json'
+).then((res) => res.json());
+---
+
+<Layout title={"Generate " + category}>
+  <h1>Generate {category}</h1>
+  <h2>{generator}</h2>
+  <GeneratorOutput results={results} />
+</Layout>

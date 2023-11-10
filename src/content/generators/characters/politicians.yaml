@@ -1,4 +1,5 @@
-name: Politician
+singular: Politician
+plural: Politicians
 tables:
   Name: politician_names
   Position: politician_positions

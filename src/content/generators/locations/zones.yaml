@@ -1,4 +1,5 @@
-name: Zones
+singular: Zone
+plural: Zones
 tables:
   Description: zone_descriptions
   Size: zone_sizes

@@ -1,4 +1,5 @@
-name: Battlefields
+singular: Battlefield
+plural: Battlefields
 tables:
   Description: battlefield_descriptions
   Layout: battlefield_layouts

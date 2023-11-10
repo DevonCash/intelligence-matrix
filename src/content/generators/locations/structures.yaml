@@ -1,4 +1,5 @@
-name: Structures
+singular: Structure
+plural: Structures
 tables:
   Description: structure_descriptions
   Owner: structure_owners

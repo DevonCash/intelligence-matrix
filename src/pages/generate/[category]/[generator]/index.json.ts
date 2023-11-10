@@ -10,6 +10,11 @@ function rand_normal(array: Array<any>) {
     return array[Math.floor(triangular(0, array.length, (array.length / 2)))];
 }
 
+interface GenResult<T>{
+    name: string;
+    results: T
+}
+
 export const GET: APIRoute = async ({ params, request }) => {
     const { category, generator } = params;
     const path = `${category}/${generator}`;
@@ -21,20 +26,23 @@ export const GET: APIRoute = async ({ params, request }) => {
         if (!generator) throw new Error('No generator found');
 
         const { data } = generator;
-        const results: (typeof data.tables)[] = [];
+        const results: GenResult<typeof data.tables>[] = [];
         const n = searchParams.get('n') ? parseInt(searchParams.get('n')!) : 1;
         for (let i = 0; i < n; i++) {
-            const result: typeof data.tables = {};
+            const result: GenResult<typeof data.tables> = {
+                name: data.singular,
+                results: {}
+            };
             for (const key in data.tables) {
                 const { id, collection } = data.tables[key];
                 const { data: table } = await getEntry(collection, id);
                 const select = table.distribution === 'uniform' ? rand_uniform : rand_normal;
-                result[key] = select(table.items);
+                result.results[key] = select(table.items);
             }
             results.push(result);
         }
 
-        return new Response(JSON.stringify({ generator: data.name, results }), {headers: {'content-type': 'application/json'}});
+        return new Response(JSON.stringify({ name: data.plural, results }), {headers: {'content-type': 'application/json'}});
     } catch (e) {
         return new Response('Not found', { status: 404 });
     }

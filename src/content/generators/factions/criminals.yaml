@@ -1,4 +1,5 @@
-name: Criminals
+singular: Criminal
+plural: Criminals
 tables:
   Name: criminal_names
   Honor: criminal_honors

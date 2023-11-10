@@ -1,0 +1,21 @@
+---
+import { marked } from "marked";
+const { results } = Astro.props;
+
+---
+
+{
+  results.map(({name, results}) => (
+    <table>
+      <caption>{name}</caption>
+      {Object.entries(results).map(([key, value]: [string, string]) => (
+        <tr>
+          <th>{key}</th>
+          <td>
+            <Fragment set:html={marked(value)} />
+          </td>
+        </tr>
+      ))}
+    </table>
+  ))
+}

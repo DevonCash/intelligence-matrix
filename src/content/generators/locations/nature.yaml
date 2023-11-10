@@ -1,4 +1,5 @@
-name: Nature
+singular: Nature
+plural: Natures
 tables:
   Description: nature_descriptions
   Situation: nature_situations

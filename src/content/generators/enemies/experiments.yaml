@@ -1,4 +1,5 @@
-name: Experiments
+singular: Experiment
+plural: Experiments
 tables:
   Description: experiment_descriptions
   Creation: experiment_creations

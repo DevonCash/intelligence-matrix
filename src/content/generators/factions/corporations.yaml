@@ -1,4 +1,5 @@
-name: Corporations
+singular: Corporation
+plural: Corporations
 tables:
   Name: corporation_names
   Sector: corporation_sectors
