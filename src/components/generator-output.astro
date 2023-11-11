@@ -2,20 +2,68 @@
 import { marked } from "marked";
 const { results } = Astro.props;
 
+const parseChance = (str: string) => {
+  const pattern = /(\d-in-\d[Dd]6)|(\d[Dd]6)/g;
+  return str
+    .split(pattern)
+    .map((tok) => {
+      if (tok?.match(pattern)) {
+        return `<var>${tok}</var>`;
+      }
+      return tok;
+    })
+    .join("");
+};
 ---
 
+<style>
+  table {
+    position: relative;
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+  caption {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+  th,
+  td {
+    padding: 0.5rem;
+    border: 1px solid var(--text);
+  }
+  td {
+    border-color: var(--mute);
+    border-style: dashed;
+  }
+  th {
+    text-align: left;
+    background: var(--text);
+    color: var(--bkgd);
+    white-space: nowrap;
+  }
+
+  caption {
+    /* font-size: smaller; */
+    font-weight: lighter;
+    /* text-align: left; */
+    text-transform: uppercase;
+  }
+</style>
 {
-  results.map(({name, results}) => (
+  results.map(({ name, result }: any) => (
     <table>
+      <tbody>
+        {Object.entries(result).map(([key, value]: any) => (
+          <tr>
+            <th>{key}</th>
+            <td style="width:100%">
+              <Fragment set:html={marked.parseInline(parseChance(value))} />
+            </td>
+          </tr>
+        ))}
+      </tbody>
       <caption>{name}</caption>
-      {Object.entries(results).map(([key, value]: [string, string]) => (
-        <tr>
-          <th>{key}</th>
-          <td>
-            <Fragment set:html={marked(value)} />
-          </td>
-        </tr>
-      ))}
     </table>
   ))
 }

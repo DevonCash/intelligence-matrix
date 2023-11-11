@@ -1,0 +1,18 @@
+---
+const toks = Astro.url.pathname.split("/").filter(Boolean);
+---
+
+<nav aria-label="breadcrumbs">
+  <ol>
+    <li>
+      <a href="/">home</a>
+    </li>
+    {
+      toks.map((t, idx, path) => (
+        <li>
+          <a href={'/' + path.slice(0, idx+1).join("/")}>{t}</a>
+        </li>
+      ))
+    }
+  </ol>
+</nav>

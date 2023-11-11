@@ -10,6 +10,7 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@airjp73/dice-notation": "^2.2.2",
     "@astrojs/check": "^0.3.1",
     "@astrojs/cloudflare": "^7.6.4",
     "@stdlib/random-base-triangular": "^0.1.0",
