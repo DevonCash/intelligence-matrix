@@ -1,0 +1,109 @@
+item_type: weapon
+items:
+  - name: Small blunt (baton, cane, etc.)
+    damage: "3"
+
+  - name: Large blunt (bat, crowbar, etc.)
+    damage: 1D6
+
+  - name: Small blade (pocket knife, hatchet, etc.)
+    damage: "3"
+
+  - name: Large blade (combat knife, axe, etc.)
+    damage: 1D6
+
+  - name: Light hand (wraps, thick gloves, etc.)
+    damage: "3"
+
+  - name: Heavy hand (knuckle dusters, etc.)
+    damage: 1D6
+
+  - name: Small ranged (slingshot, BB gun, etc.)
+    damage: "3"
+
+  - name: Whip
+    damage: 1D6
+
+  - name: Bow
+    damage: 1D6
+
+  - name: Pistol
+    damage: 1D6
+
+  - name: Machine Pistol
+    damage: 1D6
+
+  - name: Submachine Gun
+    damage: 1D6
+
+  - name: Carbine
+    damage: 1D6
+
+  - name: Hand cannon
+    damage: 1D6+1
+
+  - name: Bolt-action rifle
+    damage: 1D6+1
+
+  - name: Semi-automatic rifle
+    damage: 1D6+1
+
+  - name: Assault rifle
+    damage: 1D6+1
+
+  - name: Break-action shotgun
+    damage: 1D6+1
+
+  - name: Pump-action shotgun
+    damage: 1D6+1
+
+  - name: Light machine gun
+    damage: 1D6+1
+
+  - name: Sword
+    damage: 1D6+1
+
+  - name: Spear
+    damage: 1D6+1
+
+  - name: Large axe
+    damage: 1D6+1
+
+  - name: Large hammer
+    damage: 1D6+1
+
+  - name: Sniper rifle
+    damage: 1D6+2
+
+  - name: Rocker launcher
+    damage: 1D6+2
+
+  - name: Heavy machine gun
+    damage: 1D6+2
+
+  - name: Heavy misc. (e.g. railgun, laser)
+    damage: 1D6+2
+
+  - name: Energy blade (e.g. beam, magic)
+    damage: 1D6+2
+
+  - name: Concussion grenade
+    damage: 1D6
+
+  - name: Frag grenade
+    damage: 1D6+1
+
+  - name: Small bomb (e.g. landmine, pipe)
+    damage: 1D6+2
+
+  - name: Large bomb (e.g. C4 setup)
+    damage: 2D6
+
+  - name: Anomalous weapon
+    damage: 2D6
+
+  - name: Ultra-shotgun
+    damage: 2D6
+
+  - name: FUBAR blaster
+    damage: 2D6

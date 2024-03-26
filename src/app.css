@@ -205,3 +205,11 @@ var[data-result]::after {
   content: " (" attr(data-result) ")";
   color: var(--text);
 }
+
+input {
+  background: var(--bkgd);
+  color: var(--text);
+  border: 2px dashed currentColor;
+  font-size: inherit;
+  font-weight: inherit;
+}

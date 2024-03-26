@@ -1,0 +1,4 @@
+singular: Common Item
+plural: Common Items
+tables:
+  Item: gear_common_items

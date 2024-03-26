@@ -3,67 +3,118 @@ import { marked } from "marked";
 const { results } = Astro.props;
 
 const parseChance = (str: string) => {
-  const pattern = /(\d-in-\d[Dd]6)|(\d[Dd]6)/g;
-  return str
-    .split(pattern)
-    .map((tok) => {
-      if (tok?.match(pattern)) {
-        return `<var>${tok}</var>`;
-      }
-      return tok;
-    })
-    .join("");
+    if (!(str instanceof String)) return str;
+    const pattern = /(\d-in-\d[Dd]6)|(\d[Dd]6)/g;
+    return str
+        .split(pattern)
+        .map((tok) => {
+            if (tok?.match(pattern)) {
+                return `<var>${tok}</var>`;
+            }
+            return tok;
+        })
+        .join("");
+};
+
+const formatExtras = (xs) =>
+    Array.isArray(xs)
+        ? `<div class='extras'>
+          ${xs.filter(Boolean).join(", ")}
+        </div>`
+        : "";
+
+const OutputCell = (res: object[] | string[]) => {
+    if (typeof res === "string") return marked.parseInline(parseChance(res));
+
+    let extras = [];
+    if (res.item_type === "weapon") {
+        res.damage !== undefined && extras.push(`${res.damage} DAMAGE`);
+    } else if (res.item_type === "armor") {
+        res.armor !== undefined && extras.push(`${res.armor} ARMOR`);
+        res.accessory && extras.push(" (accessory)");
+        res.equipAsWeapon && extras.push(" (equip as weapon)");
+    } else if (res.item_type === "vehicle") {
+        res.hp !== undefined && extras.push(`${res.hp} HP`);
+        res.armor !== undefined && extras.push(`${res.armor} ARMOR`);
+    }
+    res.extra && extras.push(...res.extra);
+    return `
+      <div>
+        <div class='row'>
+          <span class='name'>${res.name}</span>
+          <hr/>
+          <span class='extras'>${extras.filter(Boolean).join(", ")}</span>
+        </div>
+        ${res.desc ? `<p style='margin: .5em 0 1em'>${marked.parseInline(parseChance(res.desc))}</p>` : ""}
+      </div>`;
 };
 ---
 
 <style>
-  table {
-    position: relative;
-    border-collapse: collapse;
-    width: 100%;
-    margin-bottom: 1rem;
-  }
-  caption {
-    font-weight: bold;
-    margin-bottom: 0.5rem;
-  }
-  th,
-  td {
-    padding: 0.5rem;
-    border: 1px solid var(--text);
-  }
-  td {
-    border-color: var(--mute);
-    border-style: dashed;
-  }
-  th {
-    text-align: left;
-    background: var(--text);
-    color: var(--bkgd);
-    white-space: nowrap;
-  }
+    table {
+        position: relative;
+        border-collapse: collapse;
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+    caption {
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+    }
+    th,
+    td {
+        padding: 0.5rem;
+        border: 1px solid var(--text);
+    }
+    td {
+        border-color: var(--mute);
+        border-style: dashed;
+    }
 
-  caption {
-    /* font-size: smaller; */
-    font-weight: lighter;
-    /* text-align: left; */
-    text-transform: uppercase;
-  }
+    td :global(hr) {
+        flex: 1 1 auto;
+        border-bottom: 2px dotted;
+        display: flex;
+        margin: 0;
+    }
+
+    td :global(.row) {
+        display: flex;
+        gap: 0.5em;
+        margin-top: 0.4em;
+    }
+
+    th {
+        text-align: left;
+        background: var(--text);
+        color: var(--bkgd);
+        white-space: nowrap;
+        width: 0px;
+    }
+
+    caption {
+        /* font-size: smaller; */
+        font-weight: lighter;
+        /* text-align: left; */
+        text-transform: uppercase;
+    }
 </style>
 {
-  results.map(({ name, result }: any) => (
-    <table>
-      <tbody>
-        {Object.entries(result).map(([key, value]: any) => (
-          <tr>
-            <th>{key}</th>
-            <td style="width:100%">
-              <Fragment set:html={marked.parseInline(parseChance(value))} />
-            </td>
-          </tr>
-        ))}
-      </tbody>
-      <caption>{name}</caption>
-    </table>
-  ))
+    results.map(({ name, result }: any) => (
+        <article>
+            <table>
+                <tbody>
+                    {Object.entries(result).map(([key, value]: any) => (
+                        <tr>
+                            <th>{key}</th>
+                            <td>
+                                <Fragment set:html={value.map(OutputCell)} />
+                            </td>
+                        </tr>
+                    ))}
+                </tbody>
+                <caption>{name}</caption>
+            </table>
+        </article>
+    ))
 }

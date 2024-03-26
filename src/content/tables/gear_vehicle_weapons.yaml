@@ -1,0 +1,38 @@
+item_type: weapon
+items:
+  - name: Auto-targeting prototype cannon
+    damage: 2D6
+
+  - name: Side hazards (e.g. spikes, laser jets)
+    damage: "3"
+
+  - name: Homing missiles
+    damage: 1D6+2
+    extra: ["1D6 missiles"]
+
+  - name: Mounted gun
+    damage: 1D6+1
+
+  - name: Gunner seats
+    damage: "0"
+    extra: ["1D6 seats"]
+
+  - name: Front-mounted ram
+    extra: ["No crash self-damage"]
+
+  - name: Mounted heavy weapon
+    damage: 1D6+2
+
+  - name: Integrated weapons
+    damage: 1D6
+    extra: ["1D6 weapons"]
+
+  - name: Mounted grenade launcher
+    damage: 1D6
+
+  - name: Mine dropper
+    damage: 1D6
+    extra: ["1D6 mines"]
+
+  - name: Chemical weapon system
+    extra: ["2D6 DAMAGE to area"]

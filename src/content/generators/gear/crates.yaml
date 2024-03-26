@@ -1,0 +1,4 @@
+singular: Crate
+plural: Crates
+tables:
+  Contents: gear_crates

@@ -1,0 +1,8 @@
+singular: Weapon
+plural: Weapons
+tables:
+  Weapon: gear_weapons
+  Skin: gear_weapon_skins
+  Tags:
+    table: gear_weapon_tags
+    count: 3

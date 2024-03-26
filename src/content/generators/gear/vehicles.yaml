@@ -1,0 +1,7 @@
+singular: Vehicle
+plural: Vehicles
+tables:
+  Vehicle: gear_vehicles
+  Attachments:
+    table: gear_vehicle_weapons
+    count: 3

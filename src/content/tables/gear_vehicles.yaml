@@ -1,0 +1,141 @@
+item_type: vehicle
+items:
+  - name: Bike
+    hp: 3
+    armor: 0
+
+  - name: Hang glider
+    hp: 3
+    armor: 0
+
+  - name: Jet ski
+    hp: 3
+    armor: 1
+
+  - name: ATV/snowmobile
+    hp: 3
+    armor: 2
+
+  - name: Small boat (e.g. fishing, patrol)
+    hp: 6
+    armor: 1
+
+  - name: Motorcycle
+    hp: 6
+    armor: 1
+
+  - name: Dirtbike
+    hp: 6
+    armor: 2
+
+  - name: Sandrail
+    hp: 8
+    armor: 0
+
+  - name: Civilian car
+    hp: 8
+    armor: 1
+
+  - name: Civilian truck/technical
+    hp: 8
+    armor: 2
+
+  - name: Armored car
+    hp: 8
+    armor: 3
+
+  - name: Race car (e.g. sports, stock)
+    hp: 10
+    armor: 0
+
+  - name: Civilian plane
+    hp: 10
+    armor: 0
+
+  - name: Civilian van
+    hp: 10
+    armor: 1
+
+  - name: Covered truck
+    hp: 10
+    armor: 2
+
+  - name: Amphibious vehicle
+    hp: 10
+    armor: 2
+
+  - name: Light util. vehicle (e.g. Jeep, UAZ)
+    hp: 12
+    armor: 1
+
+  - name: Civilian carrier (e.g. semi, bus)
+    hp: 12
+    armor: 1
+
+  - name: Gun truck
+    hp: 12
+    armor: 3
+
+  - name: Fighter aircraft
+    hp: 12
+    armor: 1
+
+  - name: Helicopter
+    hp: 16
+    armor: 1
+
+  - name: Work vehicle (e.g. tractor, crane)
+    hp: 16
+    armor: 2
+
+  - name: Large boat (e.g. barge, yacht)
+    hp: 16
+    armor: 2
+
+  - name: Self-propelled artillery
+    hp: 16
+    armor: 3
+
+  - name: Heavy aircraft
+    hp: 18
+    armor: 2
+
+  - name: Mech frame
+    hp: 18
+    armor: 2
+
+  - name: Starfighter
+    hp: 18
+    armor: 2
+
+  - name: Submarine
+    hp: 18
+    armor: 3
+
+  - name: Airship (balloon, zeppelin, etc.)
+    hp: 20
+    armor: 0
+
+  - name: Commercial jet
+    hp: 20
+    armor: 2
+
+  - name: Tank
+    hp: 20
+    armor: 4
+
+  - name: Battleship
+    hp: 30
+    armor: 3
+
+  - name: Nuclear icebreaker
+    hp: 30
+    armor: 4
+
+  - name: Spaceship
+    hp: 40
+    armor: 3
+
+  - name: Battle mech
+    hp: 40
+    armor: 4

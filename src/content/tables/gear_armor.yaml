@@ -1,0 +1,39 @@
+distribution: normal
+item_type: armor
+items:
+  - name: Combat shield
+    armor: 0
+    accessory: true
+
+  - name: Riot shield
+    armor: 1
+    equipAsWeapon: true
+
+  - name: Heavy riot shield
+    armor: 2
+    equipAsWeapon: true
+
+  - name: Helmet
+    armor: 1
+    accessory: true
+
+  - name: Civilian clothing
+    armor: 0
+
+  - name: Standard fatigues
+    armor: 0
+
+  - name: Tactical clothing
+    armor: 1
+
+  - name: Bulletproof vest
+    armor: 1
+
+  - name: Exoskeleton frame
+    armor: 1
+
+  - name: Ceramic plate
+    armor: 2
+
+  - name: Power armor
+    armor: 2

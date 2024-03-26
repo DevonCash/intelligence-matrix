@@ -1,0 +1,4 @@
+singular: Armor
+plural: Armor
+tables:
+  Armor: gear_armor

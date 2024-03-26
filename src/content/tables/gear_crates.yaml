@@ -1,0 +1,13 @@
+distribution: normal
+items:
+  - 1D6 [Artifacts](/generate/lore/artifacts)
+  - 1D6 Chemicals (tear gas, cleaner, etc.)
+  - 1D6 [Armor](/generate/gear/armor)
+  - "Uniforms (Standard, or 1-in-1D6: High-ranking)"
+  - Rations (2D6 MREs, +1D6 HP)
+  - Ammunition (1D6 types, e.g. bullets, rockets, etc.)
+  - Medical Supplies (1D6 medkits, +1D6+TAC HP)
+  - 1D6 [Weapons](/generate/gear/weapons)
+  - Machine parts (1D6 usable parts)
+  - Explosives (2D6 small or 1D6 large)
+  - Documents (classified, answer 1D6 questions)

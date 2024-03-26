@@ -8,26 +8,29 @@ const [category, generator] = path!.split("/");
 const { origin, pathname, search } = Astro.url;
 
 const title = `Generate ${generator || category}`;
+
+console.log(title);
+
 const res = await fetch(
-  origin + pathname.split("?")[0] + ".json" + search
+    origin + pathname.split("?")[0] + ".json" + search,
 ).then((x) => x.json());
 ---
 
 <Layout title={title}>
-  <header>
-    <hgroup>
-      <h1 style="text-transform: capitalize;">
-        {title}
-      </h1>
-      <Breadcrumbs />
-    </hgroup>
-    <hr />
-    <menu>
-      <li><a class="btn" href="?n=1">1</a></li>
-      <li><a class="btn" href="?n=5">5</a></li>
-      <li><a class="btn" href="?n=10">10</a></li>
-    </menu>
-  </header>
+    <header>
+        <hgroup>
+            <h1 style="text-transform: capitalize;">
+                {title}
+            </h1>
+            <Breadcrumbs />
+        </hgroup>
+        <hr />
+        <menu>
+            <li><a class="btn" href="?n=1">1</a></li>
+            <li><a class="btn" href="?n=5">5</a></li>
+            <li><a class="btn" href="?n=10">10</a></li>
+        </menu>
+    </header>
 
-  <GeneratorOutput results={res.results} />
+    <GeneratorOutput results={res.results} />
 </Layout>
