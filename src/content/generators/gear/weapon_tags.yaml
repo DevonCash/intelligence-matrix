@@ -1,0 +1,4 @@
+singular: Weapon Tag
+plural: Weapon Tags
+tables:
+  Tag: gear_weapon_tags

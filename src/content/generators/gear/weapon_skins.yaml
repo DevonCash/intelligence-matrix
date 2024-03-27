@@ -1,0 +1,4 @@
+singular: Weapon Skin
+plural: Weapon Skins
+tables:
+  Skin: gear_weapon_skins
