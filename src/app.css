@@ -1,215 +1,221 @@
 :root {
-  --text: white;
-  --bkgd: #1d1d1d;
-  --mute: rgba(128, 128, 128);
+    --text: white;
+    --bkgd: #1d1d1d;
+    --mute: rgba(128, 128, 128);
 }
 
 body {
-  background: var(--bkgd);
-  color: var(--text);
-  font-family: monospace;
+    background: var(--bkgd);
+    color: var(--text);
+    font-family: monospace;
 }
 
 main {
-  max-width: 800px;
-  min-height: 50vh;
-  margin: auto;
-  overflow-x: hidden;
+    max-width: 800px;
+    min-height: 50vh;
+    margin: 0 auto;
+    overflow-x: hidden;
 }
 
 .column,
 .columns {
-  display: grid;
-  gap: 1rem;
+    display: grid;
+    gap: 1rem;
 }
 
 .one {
-  grid-template-columns: 1fr;
+    grid-template-columns: 1fr;
 }
 
 .two {
-  grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
 }
 
 fieldset {
-  border-color: var(--text);
+    border-color: var(--text);
 }
 
 a {
-  color: var(--mute);
-  text-decoration: underline;
+    color: var(--mute);
+    text-decoration: underline;
 }
 
 a:hover {
-  color: var(--text);
+    color: var(--text);
 }
 
 a[aria-current="page"] {
-  color: var(--text);
-  text-decoration: none;
+    color: var(--text);
+    text-decoration: none;
 }
 
 a.btn,
 button {
-  font-family: inherit;
-  padding: 0.5rem 1rem;
-  cursor: pointer;
-  color: inherit;
-  border: 2px solid currentColor;
-  background: none;
-  transition: color 0.1s ease-in-out, background 0.1s ease-in-out,
-    border-color 0.1s ease-in-out;
-  font-size: medium;
-  display: inline-block;
+    font-family: inherit;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    color: inherit;
+    border: 2px solid currentColor;
+    background: none;
+    transition:
+        color 0.1s ease-in-out,
+        background 0.1s ease-in-out,
+        border-color 0.1s ease-in-out;
+    font-size: medium;
+    display: inline-block;
 }
 
 a.btn[disabled],
 button[disabled] {
-  color: var(--mute);
-  cursor: not-allowed;
+    color: var(--mute);
+    cursor: not-allowed;
 }
 
 a.btn:not([disabled]):hover,
 button:not([disabled]):hover {
-  background: var(--text);
-  color: var(--bkgd);
-  border-color: var(--text);
+    background: var(--text);
+    color: var(--bkgd);
+    border-color: var(--text);
 }
 
 header,
 footer {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  gap: 1rem;
-  align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 1rem;
+    align-items: center;
 }
 
 header hr,
 footer hr,
 menu hr {
-  flex: 1 1 auto;
+    flex: 1 1 auto;
 }
 
 menu {
-  display: flex;
-  flex-direction: row;
-  gap: 0.5rem;
-  justify-content: flex-end;
-  list-style: none;
-  padding: 0;
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+    justify-content: flex-end;
+    list-style: none;
+    padding: 0;
 }
 
 .not-found {
-  opacity: 0.5;
+    opacity: 0.5;
 }
 
 hr {
-  border: 0;
-  border-bottom: 1px solid var(--mute);
-  margin: 1rem 0;
+    border: 0;
+    border-bottom: 1px solid var(--mute);
+    margin: 1rem 0;
 }
 
 .cols {
-  display: flex;
-  gap: 1rem;
+    display: flex;
+    gap: 1rem;
 }
 
 .cols > * {
-  border-right: 1px solid var(--mute);
+    border-right: 1px solid var(--mute);
 }
 
 .cols > *:last-child {
-  border-right: none;
+    border-right: none;
 }
 
 .muted {
-  color: var(--mute);
+    color: var(--mute);
 }
 
 menu.v,
 menu.vertical {
-  display: flex;
-  flex-direction: column;
-  padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    padding: 0.5rem;
 }
 
 menu.v button,
 menu.vertical button {
-  width: 100%;
+    width: 100%;
 }
 
 [role="group"] {
-  display: flex;
+    display: flex;
 }
 
 [role="group"] button,
 [role="group"] .btn {
-  border: none;
+    border: none;
 }
 
 .halftone {
-  background-image: radial-gradient(
-    circle at center,
-    var(--text) 0.1rem,
-    transparent 0
-  );
-  background-size: 0.25rem 0.25rem;
-  background-repeat: round;
+    background-image: radial-gradient(
+        circle at center,
+        var(--text) 0.1rem,
+        transparent 0
+    );
+    background-size: 0.25rem 0.25rem;
+    background-repeat: round;
 }
 
 nav {
-  font-size: larger;
+    font-size: larger;
 }
 
 nav summary {
-  cursor: pointer;
-  padding: 0.2em;
+    cursor: pointer;
+    padding: 0.2em;
 }
 
 nav ul {
-  margin: 0.4em;
-  padding: 0 0 0 1.2em;
-  border-left: 1px solid currentColor;
-  list-style: none;
+    margin: 0.4em;
+    padding: 0 0 0 1.2em;
+    border-left: 1px solid currentColor;
+    list-style: none;
+}
+
+nav li details {
+    margin-left: -1em;
 }
 
 nav details li a {
-  padding: 0.2em;
-  display: block;
+    padding: 0.2em;
+    display: block;
 }
 
 nav[aria-label="breadcrumbs"] ol {
-  list-style: none;
-  display: flex;
-  padding-left: 0;
+    list-style: none;
+    display: flex;
+    padding-left: 0;
 }
 
 nav[aria-label="breadcrumbs"] li::before {
-  content: "/";
-  margin: 0 0.1em;
+    content: "/";
+    margin: 0 0.1em;
 }
 
 /* Valid Dice Notation*/
 var {
-  font-style: normal;
-  cursor: pointer;
-  font-weight: bolder;
+    font-style: normal;
+    cursor: pointer;
+    font-weight: bolder;
 }
 
 var[data-result] {
-  color: var(--mute);
+    color: var(--mute);
 }
 
 var[data-result]::after {
-  content: " (" attr(data-result) ")";
-  color: var(--text);
+    content: " (" attr(data-result) ")";
+    color: var(--text);
 }
 
 input {
-  background: var(--bkgd);
-  color: var(--text);
-  border: 2px dashed currentColor;
-  font-size: inherit;
-  font-weight: inherit;
+    background: var(--bkgd);
+    color: var(--text);
+    border: 2px dashed currentColor;
+    font-size: inherit;
+    font-weight: inherit;
 }

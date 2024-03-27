@@ -9,8 +9,6 @@ const { origin, pathname, search } = Astro.url;
 
 const title = `Generate ${generator || category}`;
 
-console.log(title);
-
 const res = await fetch(
     origin + pathname.split("?")[0] + ".json" + search,
 ).then((x) => x.json());

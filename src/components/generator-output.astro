@@ -2,6 +2,18 @@
 import { marked } from "marked";
 const { results } = Astro.props;
 
+const renderer = new marked.Renderer();
+const linkRenderer = renderer.link;
+renderer.link = (href, title, text) => {
+    const localLink = href.startsWith("/") || href.startsWith("#");
+    return linkRenderer
+        .call(renderer, href, title, text)
+        .replace(
+            /^<a /,
+            `<a target="_blank" rel="noreferrer noopener nofollow" `,
+        );
+};
+
 const parseChance = (str: string) => {
     if (!(str instanceof String)) return str;
     const pattern = /(\d-in-\d[Dd]6)|(\d[Dd]6)/g;
@@ -24,7 +36,8 @@ const formatExtras = (xs) =>
         : "";
 
 const OutputCell = (res: object[] | string[]) => {
-    if (typeof res === "string") return marked.parseInline(parseChance(res));
+    if (typeof res === "string")
+        return marked.parseInline(parseChance(res), { renderer });
 
     let extras = [];
     if (res.item_type === "weapon") {
