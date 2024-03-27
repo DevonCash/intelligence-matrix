@@ -1,47 +1,83 @@
-# Astro Starter Kit: Minimal
+# Intelligence Matrix
 
-```sh
-npm create astro@latest -- --template minimal
+A digitized table roller for FIST
+
+## Adding Content
+
+Data for the intelligence matrix is broken up into two types. `Generators` are listed and categorized on the site. Each generator can reference multiple `Tables` to generate a result.
+
+### Generators
+
+Generators are defined in `src/content/generators`, and the navigation for the site is created from the structure of that directory. Each generator is defined in a YAML file with the following structure:
+
+```yaml
+# src/content/generators/generator_file_name.yaml
+singular: Item # Singular name of the generator product
+plural: Items # Plural name of the generator product
+tables: # List of tables that the generator references
+  Key: table_file_name # The table key and the file name it references, sans extension
+  Key2:
+    table: table_file_name # The table file name
+    count: 3 # The number of results to include in each entry
 ```
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/minimal)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/minimal)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/minimal/devcontainer.json)
+### Tables
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+Tables are defined in `src/content/tables`, and are referenced by the generators. Each table is defined in a YAML file with the following structure:
 
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
+```yaml
+# src/content/tables/table_file_name.yaml
+distribution: normal # The selection distribution for the table ( "normal" or "uniform" )
+items: # List of items for the table
+  - Item 1 # The text of the item
+  - Item 2
+  - Item 3
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+Tables can also be defined in shorthand if you want a uniform distribution and a simple list of strings:
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+```yaml
+# src/content/tables/table_file_name.yaml
+- Item 1
+- Item 2
+- Item 3
+```
 
-Any static assets, like images, can be placed in the `public/` directory.
+#### Item Types
 
-## 🧞 Commands
+Some items require additional information in order to display correctly. By default, all items support the property `name` and `extra` Currently the following item types are supported:
 
-All commands are run from the root of the project, from a terminal:
+| Item Type | Additional Properties           |
+| :-------- | :------------------------------ |
+| `weapon`  | damage                          |
+| `armor`   | armor, accessory, equipAsWeapon |
+| `vehicle` | hp, armor                       |
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+In order to use these item types, add the item_type property to the table information, and include the additional properties as needed:
 
-## 👀 Want to learn more?
+```yaml
+# src/content/tables/gear_weapons.yaml
+item_type: weapon
+items:
+  - name: Small blunt (baton, cane, etc.)
+    damage: "3"
+```
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+```yaml
+# src/content/tables/gear_armor.yaml
+distribution: normal
+item_type: armor
+items:
+  - name: Combat shield
+    armor: 0
+    accessory: true
+```
+
+```yaml
+# src/content/tables/gear_vehicles.yaml
+item_type: vehicle
+items:
+  - name: Bike
+    hp: 3
+    armor: 0
+```
